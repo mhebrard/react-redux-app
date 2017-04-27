@@ -1,0 +1,35 @@
+{
+  "name": "reactreduxapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-xo-react": "^0.11.1",
+    "eslint-plugin-react": "^6.10.3",
+    "react-scripts": "0.9.5",
+    "xo": "^0.18.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "xo && react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "xo": {
+    "extends": "xo-react",
+    "space": 2,
+    "env": [
+      "browser",
+      "node"
+    ]
+  }
+}
