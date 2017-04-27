@@ -1,10 +1,8 @@
 import {Todos, VisibilityFilter} from './types';
 
-let nextTodoId = 0;
 export function addTodo(text) {
   return {
     type: Todos.ADD_TODO,
-    id: ++nextTodoId,
     text
   };
 }

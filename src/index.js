@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
 import {Provider} from 'react-redux';
 import store, {history} from './store';
+import {Request} from './actions/types';
 import App from './app';
 import Button from './components/button';
 import TodoApp from './components/todo-app';
@@ -25,3 +26,5 @@ ReactDOM.render(
   router,
   document.getElementById('root')
 );
+
+store.dispatch({type: Request.GET_TODO});

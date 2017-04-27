@@ -4,9 +4,10 @@ import Todo from './todo';
 
 class TodoList extends Component {
   render() {
-    const {todos, toggleTodo} = this.props;
+    const {todos, toggleTodo, loading} = this.props;
     return (
       <div>
+        {loading ? 'loading...' : ''}
         <ul>
           {todos.map(todo => {
             return (
@@ -29,7 +30,8 @@ TodoList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired),
-  toggleTodo: PropTypes.func
+  toggleTodo: PropTypes.func,
+  loading: PropTypes.bool
 };
 
 TodoList.defaultProps = {
@@ -40,7 +42,8 @@ TodoList.defaultProps = {
   }],
   toggleTodo: () => {
     console.log('default');
-  }
+  },
+  loading: false
 };
 
 export default TodoList;
