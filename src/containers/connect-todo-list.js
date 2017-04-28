@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {toggleTodo} from '../actions/actions';
+import {toggleTodo} from '../actions/index';
 import {Filters} from '../actions/types';
 import TodoList from '../components/todo-list';
 
@@ -22,9 +22,9 @@ const mapStateToProps = state => ({
   loading: state.loading
 });
 
-const mapDispatchToProps = {
-  toggleTodo
-};
+const mapDispatchToProps = dispatch => ({
+  todoOnClick: id => dispatch(toggleTodo(id))
+});
 
 const ConnectTodoList = connect(
   mapStateToProps,

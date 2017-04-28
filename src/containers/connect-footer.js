@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {setVisibilityFilter} from '../actions/actions';
+import {setVisibilityFilter} from '../actions/index';
 import {Filters} from '../actions/types';
 import Footer from '../components/footer';
 
@@ -8,9 +8,9 @@ const mapStateToProps = state => ({
   visibilityFilter: state.visibilityFilter
 });
 
-const mapDispatchToProps = {
-  setVisibilityFilter
-};
+const mapDispatchToProps = dispatch => ({
+  filterOnClick: f => dispatch(setVisibilityFilter(f))
+});
 
 const ConnectTodoList = connect(
   mapStateToProps,

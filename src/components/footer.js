@@ -1,43 +1,38 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Filter from './filter';
+import Filter from '../components/filter';
 
-class Footer extends Component {
-  render() {
-    const {filters, visibilityFilter, setVisibilityFilter} = this.props;
-    return (
-      <div>
-        Show:
-        {' '}
-        <Filter
-          label="All"
-          filter={visibilityFilter}
-          setFilter={filters.SHOW_ALL}
-          onClick={setVisibilityFilter}
-          />
-        {' '}
-        <Filter
-          label="Active"
-          filter={visibilityFilter}
-          setFilter={filters.SHOW_ACTIVE}
-          onClick={setVisibilityFilter}
-          />
-        {' '}
-        <Filter
-          label="Completed"
-          filter={visibilityFilter}
-          setFilter={filters.SHOW_COMPLETED}
-          onClick={setVisibilityFilter}
-          />
-      </div>
-    );
-  }
-}
+const Footer = ({filters, filterOnClick, visibilityFilter}) => (
+  <div>
+    Show:
+    {' '}
+    <Filter
+      label="All"
+      filter={filters.SHOW_ALL}
+      currentFilter={visibilityFilter}
+      onClick={filterOnClick}
+      />
+    {' - '}
+    <Filter
+      label="Active"
+      filter={filters.SHOW_ACTIVE}
+      currentFilter={visibilityFilter}
+      onClick={filterOnClick}
+      />
+    {' - '}
+    <Filter
+      label="Completed"
+      filter={filters.SHOW_COMPLETED}
+      currentFilter={visibilityFilter}
+      onClick={filterOnClick}
+      />
+  </div>
+);
 
 Footer.propTypes = {
   filters: PropTypes.object.isRequired,
-  visibilityFilter: PropTypes.string.isRequired,
-  setVisibilityFilter: PropTypes.func.isRequired
+  filterOnClick: PropTypes.func.isRequired,
+  visibilityFilter: PropTypes.string.isRequired
 };
 
 export default Footer;

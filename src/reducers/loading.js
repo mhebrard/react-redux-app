@@ -1,6 +1,6 @@
 import {Request} from '../actions/types';
 
-function loading(state = false, action) {
+const loading = (state = false, action) => {
   switch (action.type) {
     case Request.GET_TODO:
       return true;
@@ -11,6 +11,6 @@ function loading(state = false, action) {
     default:
       return state;
   }
-}
+};
 
 export default loading;

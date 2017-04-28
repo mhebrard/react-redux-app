@@ -1,17 +1,19 @@
 import {connect} from 'react-redux';
-import {addTodo} from '../actions/actions';
+import {addTodo} from '../actions/index';
 import AddTodo from '../components/add-todo';
-
-// Map stat
-// const mapStateToProps = state => ({
-//
-// });
 
 const mapStateToProps = () => ({
 });
 
-const mapDispatchToProps = {
-  addTodo
+const mapDispatchToProps = dispatch => {
+  return {
+    onSubmit: e => {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      dispatch(addTodo(input.value));
+      input.value = '';
+    }
+  };
 };
 
 const ConnectTodoList = connect(

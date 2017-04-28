@@ -7,11 +7,11 @@ class Filter extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   render() {
-    const {label, filter, setFilter} = this.props;
+    const {label, filter, currentFilter} = this.props;
     return (
       <span
         style={{
-          textDecoration: filter === setFilter ? 'underline' : 'none',
+          textDecoration: filter === currentFilter ? 'underline' : 'none',
           cursor: 'pointer'
         }}
         onClick={this.handleClick}
@@ -21,14 +21,14 @@ class Filter extends Component {
     );
   }
   handleClick() {
-    this.props.onClick(this.props.setFilter);
+    this.props.onClick(this.props.filter);
   }
 }
 
 Filter.propTypes = {
   label: PropTypes.string.isRequired,
   filter: PropTypes.string.isRequired,
-  setFilter: PropTypes.string.isRequired,
+  currentFilter: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 };
 

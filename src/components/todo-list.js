@@ -1,28 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Todo from './todo';
 
-class TodoList extends Component {
-  render() {
-    const {todos, toggleTodo, loading} = this.props;
-    return (
-      <div>
-        {loading ? 'loading...' : ''}
-        <ul>
-          {todos.map(todo => {
-            return (
-              <Todo
-                key={todo.id}
-                todo={todo}
-                onClick={toggleTodo}
-                />
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
-}
+const TodoList = ({todos, todoOnClick, loading}) => (
+  <div>
+    {loading ? 'loading...' : ''}
+    <ul>
+      {todos.map(todo => {
+        return (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            onClick={todoOnClick}
+            />
+        );
+      })}
+    </ul>
+  </div>
+);
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({
@@ -30,7 +25,7 @@ TodoList.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired),
-  toggleTodo: PropTypes.func,
+  todoOnClick: PropTypes.func,
   loading: PropTypes.bool
 };
 
@@ -40,8 +35,8 @@ TodoList.defaultProps = {
     completed: false,
     text: 'default todo'
   }],
-  toggleTodo: () => {
-    console.log('default');
+  todoOnClick: () => {
+    console.log('todoOnClick');
   },
   loading: false
 };

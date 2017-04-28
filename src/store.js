@@ -3,7 +3,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import {browserHistory} from 'react-router';
 
 import {Filters} from './actions/types';
-import rootReducer from './reducers/root';
+import rootReducer from './reducers/index';
 import dataService from './middlewares/data-service';
 
 const defaultState = {

@@ -1,6 +1,6 @@
 import {Todos, Request} from '../actions/types';
 
-function todos(state = [], action) {
+const todos = (state = [], action) => {
   switch (action.type) {
     case Todos.ADD_TODO:
       return [
@@ -26,6 +26,6 @@ function todos(state = [], action) {
     default:
       return state;
   }
-}
+};
 
 export default todos;
