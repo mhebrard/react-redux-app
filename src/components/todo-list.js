@@ -4,14 +4,14 @@ import Todo from './todo';
 
 const TodoList = ({todos, todoOnClick, loading}) => (
   <div>
-    {loading ? 'loading...' : ''}
+    {loading ? <h3>loading...</h3> : ''}
     <ul>
       {todos.map(todo => {
         return (
           <Todo
             key={todo.id}
             todo={todo}
-            onClick={todoOnClick}
+            todoOnClick={todoOnClick}
             />
         );
       })}
@@ -24,9 +24,9 @@ TodoList.propTypes = {
     id: PropTypes.number.isRequired,
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
-  }).isRequired),
-  todoOnClick: PropTypes.func,
-  loading: PropTypes.bool
+  }).isRequired).isRequired,
+  todoOnClick: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 TodoList.defaultProps = {

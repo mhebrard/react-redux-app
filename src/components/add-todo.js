@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AddTodo = ({onSubmit}) => (
+const AddTodo = ({addOnSubmit}) => (
   <div>
-    <form onSubmit={onSubmit}>
+    <form onSubmit={addOnSubmit}>
       <input
         type="text"
         />
@@ -15,7 +15,7 @@ const AddTodo = ({onSubmit}) => (
 );
 
 AddTodo.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  addOnSubmit: PropTypes.func.isRequired
 };
 
 export default AddTodo;

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
-import {toggleTodo} from '../actions/index';
+import {addTodo, setVisibilityFilter, toggleTodo} from '../actions/index';
 import {Filters} from '../actions/types';
-import TodoList from '../components/todo-list';
+import TodoApp from '../components/todo-app';
 
 // Filters
 const getVisibleTodos = (todos, filter) => {
@@ -18,17 +18,26 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 const mapStateToProps = state => ({
+  filters: Filters,
+  loading: state.loading,
   todos: getVisibleTodos(state.todos, state.visibilityFilter),
-  loading: state.loading
+  visibilityFilter: state.visibilityFilter
 });
 
 const mapDispatchToProps = dispatch => ({
+  addOnSubmit: e => {
+    e.preventDefault();
+    const input = e.target.querySelector('input');
+    dispatch(addTodo(input.value));
+    input.value = '';
+  },
+  filterOnClick: f => dispatch(setVisibilityFilter(f)),
   todoOnClick: id => dispatch(toggleTodo(id))
 });
 
-const ConnectTodoList = connect(
+const TodoAppContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList);
+)(TodoApp);
 
-export default ConnectTodoList;
+export default TodoAppContainer;

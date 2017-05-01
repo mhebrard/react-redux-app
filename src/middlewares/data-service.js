@@ -29,7 +29,7 @@ const dataService = store => next => action => {
   const api = getApi(next);
   switch (action.type) {
     case Request.GET_TODO:
-      api('/data/todos.json', Request.GET_TODO, 'todos');
+      api('/todos.json', Request.GET_TODO, 'todos');
       break;
     default:
       break;
