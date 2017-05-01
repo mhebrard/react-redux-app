@@ -1,12 +1,12 @@
-import {Todos} from '../actions/types';
+import {Todos, Request} from '../actions/types';
 
-function todos(state = [], action) {
+const todos = (state = [], action) => {
   switch (action.type) {
     case Todos.ADD_TODO:
       return [
         ...state,
         {
-          id: action.id,
+          id: state.length,
           text: action.text,
           completed: false
         }
@@ -21,9 +21,11 @@ function todos(state = [], action) {
         }
         return todo;
       });
+    case Request.GET_TODO_RESPONSE:
+      return action.data;
     default:
       return state;
   }
-}
+};
 
 export default todos;

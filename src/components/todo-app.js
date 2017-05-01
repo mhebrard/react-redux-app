@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import ConnectAddTodo from '../containers/connect-add-todo';
-import ConnectTodoList from '../containers/connect-todo-list';
-import ConnectFooter from '../containers/connect-footer';
+import AddTodo from './add-todo';
+import TodoList from './todo-list';
+import Footer from './footer';
 
 class TodoApp extends Component {
   render() {
     return (
       <div>
-        <ConnectAddTodo/>
-        <ConnectTodoList/>
-        <ConnectFooter/>
+        <AddTodo {...this.props}/>
+        <TodoList {...this.props}/>
+        <Footer {...this.props}/>
       </div>
     );
   }

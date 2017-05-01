@@ -1,33 +1,30 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Filter from './filter';
+import Filter from '../components/filter';
 
 class Footer extends Component {
   render() {
-    const {filters, visibilityFilter, setVisibilityFilter} = this.props;
+    const {filters} = this.props;
     return (
       <div>
         Show:
         {' '}
         <Filter
           label="All"
-          filter={visibilityFilter}
-          setFilter={filters.SHOW_ALL}
-          onClick={setVisibilityFilter}
+          filter={filters.SHOW_ALL}
+          {...this.props}
           />
-        {' '}
+        {' - '}
         <Filter
           label="Active"
-          filter={visibilityFilter}
-          setFilter={filters.SHOW_ACTIVE}
-          onClick={setVisibilityFilter}
+          filter={filters.SHOW_ACTIVE}
+          {...this.props}
           />
-        {' '}
+        {' - '}
         <Filter
           label="Completed"
-          filter={visibilityFilter}
-          setFilter={filters.SHOW_COMPLETED}
-          onClick={setVisibilityFilter}
+          filter={filters.SHOW_COMPLETED}
+          {...this.props}
           />
       </div>
     );
@@ -35,9 +32,7 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-  filters: PropTypes.object.isRequired,
-  visibilityFilter: PropTypes.string.isRequired,
-  setVisibilityFilter: PropTypes.func.isRequired
+  filters: PropTypes.object.isRequired
 };
 
 export default Footer;

@@ -12,3 +12,9 @@ export const Filters = {
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 };
+
+export const Request = {
+  GET_TODO: 'GET_TODO',
+  GET_TODO_ERROR: 'GET_TODO_ERROR',
+  GET_TODO_RESPONSE: 'GET_TODO_RESPONSE'
+};

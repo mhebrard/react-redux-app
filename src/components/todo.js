@@ -21,7 +21,7 @@ class Todo extends Component {
     );
   }
   handleClick() {
-    this.props.onClick(this.props.todo.id);
+    this.props.todoOnClick(this.props.todo.id);
   }
 }
 
@@ -31,7 +31,7 @@ Todo.propTypes = {
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired,
-  onClick: PropTypes.func.isRequired
+  todoOnClick: PropTypes.func.isRequired
 };
 
 export default Todo;
