@@ -1,0 +1,30 @@
+/* Add a background and disable chip */
+.menu ul {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+/* Format list inline */
+.menu ul li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.menu ul li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Disable underline */
+.menu ul li a {
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+.menu ul li a:hover {
+    color: #666;
+    text-decoration: underline;
+}
