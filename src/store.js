@@ -1,27 +1,26 @@
 import {createStore, applyMiddleware, compose} from 'redux';
-import {syncHistoryWithStore} from 'react-router-redux';
-import {browserHistory} from 'react-router';
+import rootReducer from './reducer';
 
-import {Filters} from './actions/types';
-import rootReducer from './reducers/index';
-import dataService from './middlewares/data-service';
+// State
+const defaultState = {};
 
-const defaultState = {
-  loading: false,
-  todos: [
-    {id: 0, text: 'Define the store', completed: true}
-  ],
-  visibilityFilter: Filters.SHOW_ALL
-};
+// Addons
+const enhancers = [
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // DevTools
+];
+const middleware = [];
 
-/* eslint-disable no-underscore-dangle */
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// Compose Addons
+const composedEnhancers = compose(
+  applyMiddleware(...middleware),
+  ...enhancers
+);
+
+// Final Store
 const store = createStore(
-  rootReducer, defaultState, composeEnhancers(
-    applyMiddleware(dataService)
-  ));
-/* eslint-enable */
-
-export const history = syncHistoryWithStore(browserHistory, store);
+  rootReducer,
+  defaultState,
+  composedEnhancers
+);
 
 export default store;

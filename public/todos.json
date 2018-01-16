@@ -1,8 +1,0 @@
-{ "todos": [
-  {"id": 0, "text": "Run App", "completed": true},
-  {"id": 1, "text": "Routing", "completed": true},
-  {"id": 2, "text": "Redux Store", "completed": true},
-  {"id": 3, "text": "Dispatch Actions", "completed": true},
-  {"id": 4, "text": "Todo List", "completed": true},
-  {"id": 5, "text": "API Call", "completed": false}
-]}

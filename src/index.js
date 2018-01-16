@@ -1,14 +1,11 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import store from './store';
-import {Request} from './actions/types';
-import Router from './router';
+// Import App from './app';
+import Root from './root';
+import registerServiceWorker from './register-service-worker';
 /* eslint-disable import/no-unassigned-import */
 import './index.css';
 /* eslint-enable */
 
-ReactDOM.render(
-  Router,
-  document.getElementById('root')
-);
-
-store.dispatch({type: Request.GET_TODO});
+ReactDOM.render(<Root/>, document.getElementById('root'));
+registerServiceWorker();

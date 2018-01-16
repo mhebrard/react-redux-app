@@ -1,22 +1,28 @@
-import React, {Component} from 'react';
+import React from 'react';
 import logo from './logo.svg';
-import Main from './components/main';
 /* eslint-disable import/no-unassigned-import */
 import './app.css';
 /* eslint-enable */
+import Main from './main';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="app-header">
+        <header className="app-header">
           <img src={logo} className="app-logo" alt="logo"/>
-          <h2>Welcome to React</h2>
-        </div>
+          <h1 className="app-title">
+            Welcome to React
+          </h1>
+        </header>
         <p className="app-intro">
-          To get started, edit <code>src/app.js</code> and save to reload.
+          To get started, edit&nbsp;
+          <code>
+          src/app.js
+          </code>
+          &nbsp;and save to reload.
         </p>
-        <Main {...this.props}/>
+        <Main/>
       </div>
     );
   }
