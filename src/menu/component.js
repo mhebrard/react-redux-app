@@ -19,6 +19,11 @@ class Menu extends React.Component {
               Square
             </Link>
           </li>
+          <li>
+            <Link to="/pokemon">
+              Pokemon
+            </Link>
+          </li>
         </ul>
       </div>
     );
