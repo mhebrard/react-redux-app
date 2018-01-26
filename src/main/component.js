@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import Menu from '../menu';
+import Pokemon from '../pokemon';
 import Square from '../square';
 
 class Main extends React.Component {
@@ -12,6 +13,7 @@ class Main extends React.Component {
         </h1>
         <Menu/>
         <Route path="/square" component={Square}/>
+        <Route path="/pokemon" component={Pokemon}/>
       </div>
     );
   }

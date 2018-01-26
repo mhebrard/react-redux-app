@@ -1,4 +1,5 @@
 import {createStore, applyMiddleware, compose} from 'redux';
+import thunk from 'redux-thunk';
 import rootReducer from './reducer';
 
 // State
@@ -8,7 +9,7 @@ const defaultState = {};
 const enhancers = [
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // DevTools
 ];
-const middleware = [];
+const middleware = [thunk];
 
 // Compose Addons
 const composedEnhancers = compose(
