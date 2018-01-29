@@ -14,7 +14,7 @@ const reducer = (state = defaultState, action) => {
         // Extract pokemon id
         const id = p.url.match(/\/([0-9]*)\/$/)[1];
         // Simple pokemon object
-        return {num: id, name: p.name, url: p.url};
+        return {num: Number(id), name: p.name, url: p.url};
       });
       // Erase previous list with new
       return {...state,
