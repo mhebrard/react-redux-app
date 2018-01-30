@@ -2,8 +2,20 @@
   "name": "react-redux-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
+  "main": "src/start.js",
+  "build": {
+    "appId": "com.electron.electron-react-redux-app",
+    "win": {
+      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
+    },
+    "directories": {
+      "buildResources": "public"
+    }
+  },
   "dependencies": {
     "axios": "^0.17.1",
+    "electron": "^1.7.11",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -14,6 +26,9 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "electron-builder": "^19.55.2",
+    "electron-react-devtools": "^0.5.3",
+    "electron-redux-devtools": "^0.3.4",
     "eslint": "^4.15.0",
     "eslint-config-xo-react": "^0.15.0",
     "eslint-plugin-react": "^7.5.1",
@@ -21,10 +36,16 @@
     "xo": "^0.18.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "nf start -p 3000",
     "build": "react-scripts build",
     "test": "xo && react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node src/start-react",
+    "react-start": "react-scripts start",
+    "pack": "build --dir",
+    "dist": "npm run build && build",
+    "postinstall": "install-app-deps"
   },
   "xo": {
     "extends": "xo-react",
