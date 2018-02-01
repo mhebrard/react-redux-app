@@ -18,6 +18,12 @@ I guide you through:
 * connect React and Redux
 * perform an AJAX call in Redux environment (with [axios](https://github.com/axios/axios))
 * setup Electron to work with React and Redux
+* build the app for both web and desktop*
+
+(\*for now on windows only)
 
 See the step by step tutorial [here](https://github.com/mhebrard/react-redux-app/wiki)
+
 Thanks to Flavio Copes' [post](https://flaviocopes.com/javascript-create-react-app-electron/) for the integration with electron.
+
+Thanks to Christian Engvall's [post](https://www.christianengvall.se/electron-app-icons/) for how to deal with icons.
