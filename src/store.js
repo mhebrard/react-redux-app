@@ -6,10 +6,16 @@ import rootReducer from './reducer';
 const defaultState = {};
 
 // Addons
-const enhancers = [
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // DevTools
-];
+const enhancers = [];
 const middleware = [thunk];
+
+// DevTools
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+if (devTools !== undefined) {
+  enhancers.push(devTools);
+}
+console.log('activate react devtools:', 'require(\'electron-react-devtools\').install()');
+console.log('activate redux devtools:', 'require(\'electron-redux-devtools\').install()');
 
 // Compose Addons
 const composedEnhancers = compose(
