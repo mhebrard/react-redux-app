@@ -2,20 +2,25 @@
   "name": "react-redux-app",
   "version": "0.1.0",
   "private": true,
+  "description": "React Redux Electron App",
+  "author": {
+    "name": "Maxime HEBRARD",
+    "email": "maxime.hebrard@gmail.com",
+    "url": "https://github.com/mhebrard"
+  },
   "homepage": "./",
-  "main": "src/start.js",
+  "main": "public/electron.js",
   "build": {
-    "appId": "com.electron.electron-react-redux-app",
+    "appId": "com.electron-react-redux-app",
     "win": {
-      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
+      "target": "nsis"
     },
     "directories": {
-      "buildResources": "public"
+      "buildResources": "assets"
     }
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "electron": "^1.7.11",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -26,6 +31,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "electron": "^1.7.11",
     "electron-builder": "^19.55.2",
     "electron-react-devtools": "^0.5.3",
     "electron-redux-devtools": "^0.3.4",
