@@ -23,6 +23,23 @@ const reducer = (state = defaultState, action) => {
         next: data.next
       };
     }
+    case t.FAILURE: {
+      const error = action.payload.error;
+      // Fake item to display error
+      let name = 'ERROR';
+      if (error.message) {
+        name = error.message;
+      }
+      const items = [
+        {num: 0, name, url: ''}
+      ];
+
+      return {...state,
+        items,
+        previous: null,
+        next: null
+      };
+    }
     default:
       return state;
   }

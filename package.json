@@ -2,6 +2,23 @@
   "name": "react-redux-app",
   "version": "0.1.0",
   "private": true,
+  "description": "React Redux Electron App",
+  "author": {
+    "name": "Maxime HEBRARD",
+    "email": "maxime.hebrard@gmail.com",
+    "url": "https://github.com/mhebrard"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.electron-react-redux-app",
+    "win": {
+      "target": "nsis"
+    },
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "prop-types": "^15.6.0",
@@ -14,6 +31,10 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "electron": "^1.7.11",
+    "electron-builder": "^19.55.2",
+    "electron-react-devtools": "^0.5.3",
+    "electron-redux-devtools": "^0.3.4",
     "eslint": "^4.15.0",
     "eslint-config-xo-react": "^0.15.0",
     "eslint-plugin-react": "^7.5.1",
@@ -21,10 +42,16 @@
     "xo": "^0.18.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "nf start -p 3000",
     "build": "react-scripts build",
     "test": "xo && react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node src/start-react",
+    "react-start": "react-scripts start",
+    "pack": "build --dir",
+    "dist": "npm run build && build",
+    "postinstall": "install-app-deps"
   },
   "xo": {
     "extends": "xo-react",
