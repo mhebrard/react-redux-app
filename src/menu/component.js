@@ -24,6 +24,11 @@ class Menu extends React.Component {
               Pokemon
             </Link>
           </li>
+          <li>
+            <Link to="/aframe">
+              A-Frame
+            </Link>
+          </li>
         </ul>
       </div>
     );
