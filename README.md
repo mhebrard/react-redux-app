@@ -1,4 +1,4 @@
-# Create React-Redux-Electron App
+# Create React-Redux-Electron-Aframe App
 
 Here I create a basic web application using :
 
@@ -6,6 +6,7 @@ Here I create a basic web application using :
 * [React](https://facebook.github.io/react/)
 * [Redux](http://redux.js.org/)
 * [Electron](https://electronjs.org/)
+* [A-Frame](https://aframe.io/)
 
 I guide you through:
 
@@ -19,6 +20,7 @@ I guide you through:
 * perform an AJAX call in Redux environment (with [axios](https://github.com/axios/axios))
 * setup Electron to work with React and Redux
 * build the app for both web and desktop*
+* display a 3D view with A-Frame
 
 (\*for now on windows only)
 
