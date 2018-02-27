@@ -54,8 +54,7 @@
     "electron-start": "node src/start-react",
     "react-start": "react-scripts start",
     "pack": "build --dir",
-    "dist": "npm run build && build",
-    "postinstall": "install-app-deps"
+    "dist": "npm run build && build"
   },
   "xo": {
     "extends": "xo-react",
