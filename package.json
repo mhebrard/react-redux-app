@@ -2,6 +2,7 @@
   "name": "react-redux-app",
   "version": "0.1.0",
   "private": true,
+  "license": "BSD-3-Clause",
   "description": "React Redux Electron App",
   "author": {
     "name": "Maxime HEBRARD",
@@ -20,6 +21,9 @@
     }
   },
   "dependencies": {
+    "aframe": "^0.7.1",
+    "aframe-animation-component": "^4.0.0-beta9",
+    "aframe-react": "^4.4.0",
     "axios": "^0.17.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -50,8 +54,7 @@
     "electron-start": "node src/start-react",
     "react-start": "react-scripts start",
     "pack": "build --dir",
-    "dist": "npm run build && build",
-    "postinstall": "install-app-deps"
+    "dist": "npm run build && build"
   },
   "xo": {
     "extends": "xo-react",
